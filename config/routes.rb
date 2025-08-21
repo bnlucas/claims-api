@@ -23,7 +23,7 @@ Rails.application.routes.draw do
         get    "/",       to: "claims#index",    as: :api_v1_claims
         post   "/",       to: "claims#create",   as: :api_v1_claims_create
         get    "/:id",    to: "claims#show",     as: :api_v1_claim
-        put    "/:id",    to: "claims#update",   as: :api_v1_claim_update
+        patch  "/:id",    to: "claims#update",   as: :api_v1_claim_update
         delete "/:id",    to: "claims#delete",   as: :api_v1_claim_delete
       end
     end

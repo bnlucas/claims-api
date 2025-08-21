@@ -7,8 +7,8 @@ module Api
     class CustomersController < ApplicationController
       # Enforces that requests to the `index` and `show` actions must have
       # a JWT with the "read:claim" scope.
-      require_scope :index, "read:claim"
-      require_scope :show,  "read:claim"
+      require_scope :index, "read:customer"
+      require_scope :show,  "read:customer"
 
       # Retrieves a paginated list of customers.
       # The pagination is handled via a cursor-based approach.
