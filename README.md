@@ -168,22 +168,6 @@ To set up the project for development (running locally without Docker):
     rails server
     ```
 
-### Running Tests
-
-To run the test suite:
-
-```bash
-rspec
-```
-
-### Environment Variables
-
-The application uses the following environment variables. You will need to set these in a `.env` file or provide them in your shell environment.
-
-* `RAILS_MASTER_KEY`: Your Rails encrypted secrets key.
-* `JWT_PRIVATE_KEY`: The RSA private key for signing JWTs.
-* `JWT_PUBLIC_KEY`: The RSA public key for verifying JWTs.
-
 -----
 
 ## License
