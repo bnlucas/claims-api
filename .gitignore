@@ -7,10 +7,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore all environment files (except templates).
-/.env*
-!/.env*.erb
-
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -28,6 +24,3 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
-
-# Ignore master key for decrypting credentials and more.
-/config/master.key
