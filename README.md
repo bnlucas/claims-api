@@ -18,7 +18,13 @@ A microservice for managing customer claims, built with Ruby on Rails.
 
 This API provides a secure and efficient way for customers to submit, track, and manage various types of claims (e.g., medical, travel, vehicle). It features robust authentication via JWTs, a service-oriented architecture for clear business logic, and cursor-based pagination for high-performance data retrieval.
 
-\!
+---
+
+## Fully Envisioned Sequence Flow
+
+![sequence](https://raw.githubusercontent.com/bnlucas/claims-api/refs/heads/main/Claims%20Flow.png)
+
+---
 
 ## 🚀 Quick Start
 
@@ -179,10 +185,6 @@ The application uses the following environment variables. You will need to set t
 * `JWT_PUBLIC_KEY`: The RSA public key for verifying JWTs.
 
 -----
-
-## Full Claims Sequence
-
-![sequence](https://github.com/bnlucas/claims-api/blob/main/Claims+Flow.png)
 
 ## License
 
