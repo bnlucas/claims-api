@@ -180,6 +180,10 @@ The application uses the following environment variables. You will need to set t
 
 -----
 
+## Full Claims Sequence
+
+![sequence](https://github.com/bnlucas/claims-api/blob/main/Claims+Flow.png)
+
 ## License
 
 This project is open-source under the [MIT License](https://opensource.org/licenses/MIT).
