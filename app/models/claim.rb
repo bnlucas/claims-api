@@ -11,7 +11,7 @@ class Claim < ApplicationRecord
     submitted: "submitted",
     processing: "processing",
     approved: "approved",
-    rejected: "rejected",
+    rejected: "rejected"
   }.freeze
 
   # ----------------------------------------

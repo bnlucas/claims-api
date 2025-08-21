@@ -12,7 +12,7 @@ module TableIndexHelpers
     customer_id: :usrid,
     created_at: :crt,
     updated_at: :upd,
-    deleted_at: :del,
+    deleted_at: :del
   }.freeze
 
   private_constant :CLIENT_SCOPE_COLUMNS

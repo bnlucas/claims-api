@@ -26,7 +26,7 @@ module Claims
 
     def excessive_claims?(customer_id)
       ::Claim.where(customer_id:)
-             .where('created_at >= ?', 1.week.ago)
+             .where("created_at >= ?", 1.week.ago)
              .count >= 5
     end
 

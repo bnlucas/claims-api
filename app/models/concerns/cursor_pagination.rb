@@ -117,7 +117,7 @@ module CursorPagination
       payload = {
         v: VERSION,
         k: _cursor_keys,                                   # keys
-        o: _cursor_keys.map { _cursor_orders[_1] || :asc },# orders
+        o: _cursor_keys.map { _cursor_orders[_1] || :asc }, # orders
         d: _cursor_keys.map { |k| data_hash[k.to_sym] }    # data
       }
 
@@ -188,9 +188,9 @@ module CursorPagination
                             .map { |c| connection.quote_column_name(c) }
                             .join(", ")
         binds        = _cursor_keys.map { |k| payload[k.to_s] }
-        placeholders = ["?"] * _cursor_keys.size
+        placeholders = [ "?" ] * _cursor_keys.size
         return sanitize_sql_array(
-          ["(#{@_quoted_cols}) #{op} (#{placeholders.join(', ')})", *binds]
+          [ "(#{@_quoted_cols}) #{op} (#{placeholders.join(', ')})", *binds ]
         )
       end
 
@@ -222,7 +222,7 @@ module CursorPagination
         _cursor_keys[0..idx].map { payload[_1.to_s] }
       end
 
-      sanitize_sql_array([clauses.join(" OR "), *binds])
+      sanitize_sql_array([ clauses.join(" OR "), *binds ])
     end
 
     # Decodes a legacy version 0 cursor (without a header).

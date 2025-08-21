@@ -69,7 +69,7 @@ customers.each do |customer|
   # Create a bunch of claims for each customer
   rand(1..10).times do
     claim_type = claim_types.sample
-    is_duplicate = [true, false].sample
+    is_duplicate = [ true, false ].sample
     claim = Claim.create!(
       customer: customer,
       claim_type: claim_type,
@@ -80,7 +80,7 @@ customers.each do |customer|
     )
 
     # Add a few soft-deleted claims
-    if [true, false].sample
+    if [ true, false ].sample
       claim.update_column(:deleted_at, Faker::Time.backward(days: 10))
     end
   end
