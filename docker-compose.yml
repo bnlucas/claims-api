@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    depends_on:
+      - db
+      - redis
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./.env
+      - ./.env.docker
+    environment:
+      RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+
+  db:
+    env_file:
+      - ./.env
+    image: postgres:16
+    volumes:
+      - ./.docker/postgres:/var/lib/postgressql/data:delegated
+    ports:
+      - ${DATABASE_PORT}:5432
+    environment:
+      - POSTGRES_USER=${DATABASE_USERNAME}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+
+  redis:
+    env_file:
+      - ./.env
+      - ./.env.docker
+    image: redis:7
+    ports:
+      - ${REDIS_PORT}:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "-h", "${REDIS_HOST}", "-p", "${REDIS_PORT}", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
